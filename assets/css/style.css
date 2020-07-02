@@ -92,6 +92,7 @@ hr {
 }
 
 .header.fixed {
+  padding: 10px 0;
   background-color: #eb8b8d;
   position: fixed;
   top: 0;
@@ -115,6 +116,7 @@ hr {
   font-size: 30px;
   font-weight: 700;
   color: white;
+  cursor: pointer;
   padding: 0 15px;
 }
 
@@ -535,6 +537,7 @@ hr {
 
 .accordion__item.active .accordion__content{
   display: block;
+  transition-delay: .2s;
 }
 
 .accordion__item.active .accordion__header {
@@ -582,6 +585,7 @@ hr {
   color: #999;
   font-style: italic;
   font-weight: 300;
+  pointer-events: none;
 }
 
 .accordion__title {
@@ -595,9 +599,14 @@ hr {
   position: relative;
 }
 
+.reviews .slick-slider {
+  padding: 0 110px;
+}
+
 .reviews__item {
   padding-left: 255px;
   position: relative;
+  min-height: 210px;
 }
 
 .reviews__photo {
@@ -606,15 +615,15 @@ hr {
   position: absolute;
   border: 2px solid #95e1d3;
   border-radius: 50%;
-  top: -40px;
+  top: 21px;
   left: 0;
   z-index: 1;
   display: block;
 }
 
 .reviews__text {
-  margin-bottom: 20px;
-  height: 200px;
+  margin-bottom: 52px;
+  height: 231px;
   font-size: 20px;
   color: #999;
   font-style: italic;
@@ -637,16 +646,23 @@ hr {
   margin-right: 10px;
 }
 
-.reviews__btn {
-  font-size: 0;
+.slick-arrow {
+  font-size: 0px;
+  align-items: center;
+  display: block;
   color: transparent;
   position: absolute;
+  border: 0;
+  background: none;
   top: 50%;
   z-index: 1;
   transform: translateY(-50%);
+  outline: none;
+  cursor: pointer;
+  transition-delay: 0;
 }
 
-.reviews__btn::after {
+.slick-arrow::after {
   content: "";
   display: block;
   width: 16px;
@@ -655,12 +671,12 @@ hr {
   border-left: 2px solid #ccc;
 }
 
-.reviews__btn--prev {
+.slick-prev {
   left: 0;
   transform: rotate(-45deg);
 }
 
-.reviews__btn--next {
+.slick-next {
   right: 0;
   transform: rotate(135deg);
 }
@@ -1165,7 +1181,7 @@ hr {
   .stat__item:last-child {
     border-right: 0;
   }
-  .reviews {
+  .reviews .slick-slider {
     padding: 0 60px;
   }
   .reviews__photo {
@@ -1238,6 +1254,9 @@ hr {
     left: 0;
     background-color: #eb8b8d;
   }
+  .nav.active {
+    display: block;
+  }
   .nav__link {
     display: block;
     margin: 0;
@@ -1245,6 +1264,7 @@ hr {
   }
   .nav-toggle {
     display: block;
+    outline: none;
   }
   .section {
     padding: 40px 0;
@@ -1355,13 +1375,13 @@ hr {
     bottom: -50px;
     right: -80px;
   }
-  .reviews {
+  .reviews .slick-slider {
     padding: 0;
   }
   .reviews__author {
     justify-content: center;
   }
-  .reviews__btn {
+  .slick-arrow {
     top: 18%;
   }
   .logos {
